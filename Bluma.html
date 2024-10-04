@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bulma Modal Example</title>
+
+  <!-- 引入Bulma CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  
+</head>
+<body>
+
+  <!-- 按鈕來打開彈跳視窗 -->
+  <button class="button is-primary" id="openModal">開啟彈跳視窗</button>
+
+  <!-- Bulma Modal -->
+  <div class="modal" id="exampleModal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">彈跳視窗標題</p>
+        <button class="delete" aria-label="close" id="closeModal"></button>
+      </header>
+      <section class="modal-card-body">
+        <p>這是Bulma的彈跳視窗內容。</p>
+      </section>
+      <footer class="modal-card-foot">
+        <button class="button" id="closeModalFooter">關閉</button>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    // 取得按鈕和模態視窗元素
+    const openModalButton = document.getElementById('openModal');
+    const closeModalButton = document.getElementById('closeModal');
+    const closeModalFooterButton = document.getElementById('closeModalFooter');
+    const modal = document.getElementById('exampleModal');
+
+    // 打開模態視窗的函數
+    openModalButton.addEventListener('click', () => {
+      modal.classList.add('is-active');
+    });
+
+    // 關閉模態視窗的函數
+    closeModalButton.addEventListener('click', () => {
+      modal.classList.remove('is-active');
+    });
+
+    // 另一個關閉模態視窗的按鈕
+    closeModalFooterButton.addEventListener('click', () => {
+      modal.classList.remove('is-active');
+    });
+  </script>
+
+</body>
+</html>

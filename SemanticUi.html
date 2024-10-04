@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semantic UI Modal Example</title>
+  
+  <!-- 引入Semantic UI CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+  
+  <!-- 引入jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  
+  <!-- 引入Semantic UI JS -->
+  <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+</head>
+<body>
+
+  <!-- 按鈕觸發彈跳視窗 -->
+  <button class="ui primary button" id="openModal">
+    開啟彈跳視窗
+  </button>
+
+  <!-- 模態視窗結構 -->
+  <div class="ui modal">
+    <div class="header">彈跳視窗標題</div>
+    <div class="content">
+      <p>這是彈跳視窗的內容區域，可以放任何文字、圖片或表單。</p>
+    </div>
+    <div class="actions">
+      <div class="ui black deny button">取消</div>
+      <div class="ui positive right labeled icon button">
+        確認
+        <i class="checkmark icon"></i>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // 當按下按鈕時，顯示模態視窗
+    $('#openModal').click(function() {
+      $('.ui.modal').modal('show');
+    });
+  </script>
+
+</body>
+</html>

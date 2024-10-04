@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SweetAlert Example</title>
+  <!-- 引入 SweetAlert 的 CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+<!-- 按鈕 -->
+<button id="showAlert">打開彈跳視窗</button>
+
+<!-- JavaScript 程式碼 -->
+<script>
+  document.getElementById('showAlert').addEventListener('click', function() {
+    Swal.fire({
+      title: 'SweetAlert 彈跳視窗!',
+      text: '這是一個簡單的彈跳視窗示範。',
+      icon: 'info', // 可以是 'success', 'error', 'warning', 'info', 'question'
+      confirmButtonText: '確定'
+    });
+  });
+</script>
+
+</body>
+</html>

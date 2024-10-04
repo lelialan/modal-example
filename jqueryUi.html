@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery UI Dialog</title>
+    <!-- 引入 jQuery 和 jQuery UI -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+    <style>
+        /* 調整對話框的寬度 */
+        #dialog {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<!-- 按鈕觸發 Dialog -->
+<button id="openDialog">打開彈跳視窗</button>
+
+<!-- Dialog 彈跳視窗 -->
+<div id="dialog" title="彈跳視窗標題">
+    <p>這是使用 jQuery UI 的彈跳視窗。</p>
+</div>
+
+<script>
+    $(document).ready(function() {
+        // 初始化 Dialog
+        $("#dialog").dialog({
+            autoOpen: false,  // 預設不自動打開
+            modal: true,      // 背景不可點擊
+            buttons: {
+                "確認": function() {
+                    $(this).dialog("close");
+                },
+                "取消": function() {
+                    $(this).dialog("close");
+                }
+            }
+        });
+
+        // 當按下按鈕時打開 Dialog
+        $("#openDialog").on("click", function() {
+            $("#dialog").dialog("open");
+        });
+    });
+</script>
+
+</body>
+</html>

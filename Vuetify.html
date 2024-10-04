@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vuetify Modal Example</title>
+
+  <!-- 引入 Vuetify CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.5.10/dist/vuetify.min.css" rel="stylesheet">
+
+</head>
+<body>
+
+  <div id="app">
+    <v-app>
+      <v-container>
+        <!-- 按鈕來打開彈跳視窗 -->
+        <v-btn color="primary" @click="dialog = true">開啟彈跳視窗</v-btn>
+
+        <!-- Vuetify 彈跳視窗 -->
+        <v-dialog v-model="dialog" max-width="500">
+          <v-card>
+            <v-card-title class="text-h5">彈跳視窗標題</v-card-title>
+            <v-card-text>
+              這是Vuetify的彈跳視窗內容。
+            </v-card-text>
+            <v-card-actions>
+              <v-spacer></v-spacer>
+              <v-btn color="primary" text @click="dialog = false">關閉</v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-dialog>
+      </v-container>
+    </v-app>
+  </div>
+
+  <!-- 引入 Vue 和 Vuetify JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.5.10/dist/vuetify.js"></script>
+
+  <script>
+    new Vue({
+      el: '#app',
+      vuetify: new Vuetify(),
+      data: () => ({
+        dialog: false
+      })
+    });
+  </script>
+
+</body>
+</html>
